@@ -6,7 +6,7 @@ export default function Navbar() {
 
   return (
     <nav style={{ padding: "10px 20px", backgroundColor: "#333", color: "#fff", position: "sticky", top: 0, zIndex: 100 }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", position: "relative" }}>
         {/* اللوجو */}
         <Link 
           to="/" 
@@ -21,19 +21,7 @@ export default function Navbar() {
           Frames
         </Link>
 
-        {/* الروابط */}
-        <div className="nav-links" style={{
-          display: open ? "block" : "none",
-          transition: "all 0.3s ease",
-        }}>
-          <Link to="/" style={linkStyle}>Home</Link>
-          <Link to="/category" style={linkStyle}>Category</Link>
-          <Link to="/about" style={linkStyle}>About</Link>
-          <Link to="/contact" style={linkStyle}>Contact</Link>
-          <Link to="/cart" style={linkStyle}>Cart</Link>
-        </div>
-
-        {/* زر الهامبرجر مع حركة */}
+        {/* زر الهامبرجر */}
         <button 
           onClick={() => setOpen(!open)} 
           style={{
@@ -45,18 +33,52 @@ export default function Navbar() {
             transition: "transform 0.3s",
           }}
         >
-          {open ? "✕" : "☰"} {/* هيتحول من ☰ لـ X */}
+          {open ? "✕" : "☰"}
         </button>
+
+        {/* الروابط */}
+        <div className={`nav-links ${open ? "open" : ""}`}>
+          <Link to="/" style={linkStyle}>Home</Link>
+          <Link to="/category" style={linkStyle}>Category</Link>
+          <Link to="/about" style={linkStyle}>About</Link>
+          <Link to="/contact" style={linkStyle}>Contact</Link>
+          <Link to="/cart" style={linkStyle}>Cart</Link>
+        </div>
       </div>
 
       <style>
         {`
-          @media(min-width: 768px){
-            .nav-links { display: flex !important; gap: 20px; }
-            nav button { display: none; }
+          .nav-links a:hover { color: #ff9800; }
+
+          /* شاشات صغيرة */
+          @media (max-width: 767px) {
+            .nav-links {
+              display: none;
+              flex-direction: column;
+              gap: 10px;
+              position: absolute;
+              top: 100%; /* تحت الهامبرجر */
+              right: 0;
+              background-color: #333;
+              padding: 10px 15px;
+              border-radius: 5px;
+              box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+              min-width: 120px; /* عرض مناسب */
+            }
+            .nav-links.open {
+              display: flex;
+            }
+            .nav-links a {
+              text-align: right;
+              padding: 5px 0;
+            }
           }
 
-          .nav-links a:hover { color: #ff9800; }
+          /* شاشات كبيرة */
+          @media (min-width: 768px) {
+            .nav-links { display: flex !important; gap: 20px; position: static; min-width: auto; }
+            nav button { display: none; }
+          }
         `}
       </style>
     </nav>
