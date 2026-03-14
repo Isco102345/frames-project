@@ -67,7 +67,7 @@ const products = [
   },
   {
     id: 7,
-    name: "Dentist Clinic Frame",
+    name: "Dentist  Frame",
     price: 30,
     category: "dentist",
     images:[
@@ -78,7 +78,51 @@ const products = [
   },
   {
     id: 8,
-    name: "Dentist Clinic Frame",
+    name: "Dentist  Frame",
+    price: 30,
+    category: "dentist",
+    images:[
+     "/images/product_03.jpg",
+     "/images/product_03.jpg",
+     "/images/product_03.jpg"
+    ] 
+  },
+  {
+    id: 9,
+    name: "Dentist  Frame",
+    price: 30,
+    category: "dentist",
+    images:[
+     "/images/product_03.jpg",
+     "/images/product_03.jpg",
+     "/images/product_03.jpg"
+    ] 
+  },
+  {
+    id: 10,
+    name: "Dentist  Frame",
+    price: 30,
+    category: "dentist",
+    images:[
+     "/images/product_03.jpg",
+     "/images/product_03.jpg",
+     "/images/product_03.jpg"
+    ] 
+  },
+  {
+    id: 11,
+    name: "Dentist  Frame",
+    price: 30,
+    category: "dentist",
+    images:[
+     "/images/product_03.jpg",
+     "/images/product_03.jpg",
+     "/images/product_03.jpg"
+    ] 
+  },
+  {
+    id: 12,
+    name: "Dentist  Frame",
     price: 30,
     category: "dentist",
     images:[

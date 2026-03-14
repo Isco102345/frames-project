@@ -39,7 +39,6 @@ export default function Cart({ cartItems, removeFromCart }) {
           <div>
             {cartItems.map((item) => (
               <div key={item.id} className="cart-item">
-                {/* أول صورة من مصفوفة images */}
                 <img src={item.images[0]} alt={item.name} className="cart-img" />
                 <span className="cart-name">
                   {item.name} x {item.quantity}
