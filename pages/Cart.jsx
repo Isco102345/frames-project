@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export default function Cart({ cartItems, removeFromCart }) {
   const [toast, setToast] = useState(null);
 
-  const numbers = ["201100331323", "201111111111", "201222222222"];
+  const numbers = ["201100331323", "201112963622", "201141983196"];
 
   const handleRemove = (id, name) => {
     removeFromCart(id);
